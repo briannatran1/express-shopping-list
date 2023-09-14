@@ -35,13 +35,11 @@ router.get('/:name', function (req, res) {
     throw new NotFoundError();
   }
 
-  console.log(items);
   return res.json(foundItem);
 });
 
 /** PATCH /items/:name: accepts JSON body, updates item and returns it */
 router.patch('/:name', function (req, res) {
-  console.log(items);
   const foundItem = items.find(item => item.name === req.params.name);
 
   if (!foundItem) {
