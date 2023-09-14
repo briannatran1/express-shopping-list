@@ -12,6 +12,7 @@ router.get('/', function (req, res) {
   return res.json(items);
 });
 
+//TODO: check if body falsey before adding and returning
 /** POST /items: accepts JSON body, adds item, and returns it */
 router.post('/', function (req, res) {
   const body = req.body;
@@ -27,6 +28,7 @@ router.post('/', function (req, res) {
     });
 });
 
+//TODO: could create ORM with find function or small function to find item
 /** GET /items/:name: return a single item */
 router.get('/:name', function (req, res) {
   const foundItem = items.find(item => item.name === req.params.name);
